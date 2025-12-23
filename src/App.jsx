@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Home from '@components/home.jsx'
 
 function App() {
 
@@ -7,7 +8,7 @@ function App() {
   return (
     <>
       <div>
-        <h1 className='bg-red-200'>Lorem ipsum dolor sit amet.</h1>
+       <Home/>
       </div>
     </>
   )

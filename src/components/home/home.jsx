@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import GradientBlinds from './GradientBlinds '
 import Beams from './beam'
+import DesktopNav from '../navbar/desktopNav';
 
 function Home() {
 
@@ -32,7 +33,9 @@ function Home() {
             distortAmount={0}
             shineDirection="left"
             mixBlendMode="lighten"
-        /> :
+        /> 
+        
+        :
         <Beams
             beamWidth={0.75}
             beamHeight={15}
@@ -43,8 +46,9 @@ function Home() {
             scale={0.2}
             rotation={30}
         />}
-         
+        <DesktopNav/>
     </div>
+    
   )
 }
 

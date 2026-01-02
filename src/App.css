@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import '@tailwind-tree/vite-plugin/safelist';
+
+
 :root {
   --glass-bg: rgba(187, 187, 188, 0.037);
   --glass-bg-strong: rgba(187, 187, 188, 0.36);

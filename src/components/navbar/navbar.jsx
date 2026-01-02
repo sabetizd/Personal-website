@@ -6,7 +6,7 @@ import { DynamicIcon } from "lucide-react/dynamic";
 
 gsap.registerPlugin(useGSAP, SplitText);
 
-export default function DesktopNav() {
+export default function Navbar() {
   useGSAP(() => {
     const links = gsap.utils.toArray(".menu-items");
 

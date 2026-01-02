@@ -1,10 +1,10 @@
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import GradientBlinds from "./GradientBlinds ";
 import Beams from "./beam";
-import DesktopNav from "../navbar/desktopNav";
 import SidePanel from "../sidePanel/sidePanel";
 import { gsap } from "gsap";
 import { DynamicIcon } from "lucide-react/dynamic";
+import Navbar from "../navbar/navbar";
 
 function Home() {
   const [largeScreen, setLargeScreen] = useState(
@@ -54,7 +54,7 @@ function Home() {
             rotation={30}
           />
         )}
-        <DesktopNav />
+        <Navbar />
 
         <div id="hero" className="hero-glass absolute top-[40%] left-[50%] translate-[-50%] group font-cabin text-center py-6 px-20 text-white rounded-full">
           <p className="text-[30px] hero-hi">Hi! i’m Ali</p>
@@ -183,7 +183,6 @@ const heroAnim = () => {
       },
     });
 }
-
 
 
 export const SkillRotator = () => {

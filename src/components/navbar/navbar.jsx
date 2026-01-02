@@ -1,45 +1,83 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef,useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import { DynamicIcon } from "lucide-react/dynamic";
 
+
 gsap.registerPlugin(useGSAP, SplitText);
 
 export default function Navbar() {
-  useGSAP(() => {
+ 
+  return (
+   <>
+      <divض>
+        <MobileNavbar />
+      </div>
+
+      <div className="max-md:hidden flex">
+        <DesktopNavbar />
+      </div>
+   </>
+  );
+}
+
+const MobileNavbar = () => {
+  return(
+    <>
+      <div className={
+        `
+        max-md:flex hidden 
+        size-10 bg-amber-300 absolute top-10 right-[5%]
+        `}>
+
+      </div>
+    </>
+  )
+}
+
+const DesktopNavbar = () => {
+   useGSAP(() => {
+
     const links = gsap.utils.toArray(".menu-items");
 
     const items = links.map((el) => {
+    const split = new SplitText(el, 
+      { type: "chars", // split words into unique characters
+        charsClass: "char" // give each character a class name (here is .char)
+      }
+    );
 
-      const split = new SplitText(el, { type: "chars", charsClass: "char" });
+    const tl = gsap.timeline(
+      { paused: true, // prevents the animatoin from playing fromt start
+        repeat: 0 
+      }
+    );
 
-     
+    tl.fromTo(
+      split.chars,
+      {perspective: 0, rotateZ: 0 },
+      {
+        perspective: 1000,
+        rotateZ: 360,
+        stagger: 0.03,
+        duration: 0.5,
+        ease: "power2.inOut",
+        transformStyle: "preserve-3d",// keeps 3D effect
+      }
+    );
 
-      const tl = gsap.timeline({ paused: true, repeat: 0 });
+    const onEnter = () => tl.play(0);
 
-      tl.fromTo(
-        split.chars,
-        { perspective: 0, rotateZ: 0 },
-        {
-          perspective: 1000,
-          rotateZ: 360,
-          stagger: 0.03,
-          duration: 0.5,
-          ease: "power2.inOut",
-          transformStyle:"preserve-3d"
-        }
-      );
+    const onLeave = () => {
+      tl.reverse();
+    };
 
-      const onEnter = () => tl.play(0);
-      const onLeave = () => {
-        tl.reverse();
-      };
+    el.addEventListener("mouseenter", onEnter);
+    el.addEventListener("mouseleave", onLeave);
 
-      el.addEventListener("mouseenter", onEnter);
-      el.addEventListener("mouseleave", onLeave);
+    return { el, split, tl, onEnter, onLeave };
 
-      return { el, split, tl, onEnter, onLeave };
     });
 
     return () => {
@@ -71,7 +109,7 @@ export default function Navbar() {
           <li className="menu-items">Home</li>
           <li className="menu-items">About</li>
           <li className="menu-items ml-5!">
-              <span>Contact Me</span>
+            <span>Contact Me</span>
             <DynamicIcon
               className="inline-block"
               size={18}
@@ -82,5 +120,5 @@ export default function Navbar() {
       </div>
     </div>
   );
-}
 
+}

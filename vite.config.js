@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
-import { twTreePlugin } from '@tailwind-tree/vite-plugin';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -13,7 +12,6 @@ export default defineConfig({
       },
     }),
     tailwindcss(),
-    twTreePlugin(),
   ],
   resolve:{
     alias:{

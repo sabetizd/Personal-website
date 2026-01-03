@@ -1,4 +1,4 @@
-import React, { useEffect, useRef,useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef,useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
@@ -11,11 +11,11 @@ export default function Navbar() {
  
   return (
    <>
-      <divض>
+      <div>
         <MobileNavbar />
       </div>
 
-      <div className="max-md:hidden flex">
+      <div className="max-sm:hidden flex">
         <DesktopNavbar />
       </div>
    </>
@@ -23,14 +23,73 @@ export default function Navbar() {
 }
 
 const MobileNavbar = () => {
+  const [toggle,setToggle] = useState(false);
+  const [menuIcon,setmenuIcon] = useState('logs')
+  const iconRef = useRef()
+  const menuRef = useRef(null);
+  
+  useEffect(() => {
+    toggleMenuAnimation()
+  }, [toggle]);
+
+  const toggleMenuAnimation=()=>{
+    if (!menuRef.current) return;
+
+    const rotateDur = 0.5;
+
+    gsap.killTweensOf([menuRef.current,iconRef.current])
+    const tl = gsap.timeline();
+    if (toggle) {
+      
+      tl.to(menuRef.current, { display: "block",height:0, })
+      tl.to(menuRef.current, { height: "100svh", duration: 1, ease: "power2.in" })
+      tl.to(iconRef.current, {rotateZ:90 ,opacity:0,duration:rotateDur,ease:"power2.out"},1)
+      tl.call(()=>setmenuIcon('x'),null)
+      //tl.to({},{duration:0.005},">")
+      tl.fromTo
+      (iconRef.current,
+        {rotateZ:-90,opacity:0},
+        {rotateZ:0,opacity:1,duration:rotateDur,ease:"power2.in",
+          immediateRender: false }// (if not set gsap will setdefault from to props from begining (use it to have you min queue))
+      )
+
+      
+      
+    } else {
+      tl.to(menuRef.current, { height: '0', duration: 1, ease: "power2.in" })
+      tl.to(menuRef.current, { display: "none"})
+      tl.to(iconRef.current, {rotateZ:90 ,opacity:0,duration:rotateDur,ease:"power2.out"},1)
+      tl.call(()=>setmenuIcon('logs'),null)
+      tl.to({},{duration:0.05},">")
+      tl.fromTo
+      (iconRef.current,
+        {rotateZ:-90,opacity:0},
+        {rotateZ:0,opacity:1,duration:rotateDur,ease:"power2.out",
+          immediateRender: false }// (if not set gsap will setdefault from to props from begining (use it to have you min queue))
+      )
+    }
+
+   
+  }
+  
   return(
     <>
-      <div className={
+      <div 
+      onClick={()=>setToggle(prev=>!prev)}
+      className={
         `
-        max-md:flex hidden 
-        size-10 bg-amber-300 absolute top-10 right-[5%]
+        saturate-150
+        max-sm:flex hidden       
+        size-11 absolute top-5 right-5 items-center justify-center
+        hero-glass color-white rounded-2xl z-30
         `}>
-
+          <DynamicIcon ref={iconRef}
+          className={`
+          drop-shadow-[0px_0px_5px_#ffff]
+          `} color="#fff" name={menuIcon}/>
+      </div>
+      <div ref={menuRef} className="w-full h-0 rounded-none absolute bottom-0 backdrop-blur-sm z-10">
+            
       </div>
     </>
   )

@@ -20,14 +20,15 @@ function SidePanel() {
   return (
     <>
       <div
-        className="absolute px-2 py-2 h-[90svh] flex flex-col items-center translate-y-[-50%] top-[50%] left-5 rounded-3xl outer-glass inner-glass 
-    [&>div]:mt-1"
+        className="absolute px-2 py-2 h-[92svh] flex flex-col items-center translate-y-[-50%] top-[50%] left-5 rounded-[26px] outer-glass inner-glass 
+    [&>div]:mt-1
+    max-md:z-10 max-md:left-3"
       >
-        <div className="w-full h-9 flex justify-center items-center">
+        <div className="w-full h-9 flex justify-center items-center relative">
           <MagneticIcon>
             <a href="">
               <img
-                className="size-[38px] inline-block"
+                className="size-[38px] inline-block z-100"
                 src="imgs/s_logo.png"
                 alt=""
               />

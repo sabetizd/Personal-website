@@ -56,7 +56,7 @@ function Home() {
         )}
         <Navbar />
 
-        <div id="hero" className="hero-glass absolute top-[40%] left-[50%] translate-[-50%] group font-cabin text-center py-6 px-20 text-white rounded-full">
+        <div id="hero" className=" absolute top-[40%] left-[50%] translate-[-50%] group font-cabin text-center py-6 px-20 text-white rounded-full">
           <p className="text-[30px] hero-hi">Hi! i’m Ali</p>
           <div className="hero-title-wrap overflow-hidden mt-7">
             <p

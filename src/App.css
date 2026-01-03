@@ -20,16 +20,28 @@
 }
 @theme {
   --font-cabin: "cabin", sans-serif;
+  --font-cabin-bold : "cabin-bold", sans-serif;
+
+  
 }
 
 * {
   scrollbar-width: none;
+  box-sizing: border-box;
 }
 
 @font-face {
   font-family: "cabin";
   src: url("../fonts/CabinetGrotesk-Regular.ttf");
   font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family:"cabin-bold";
+  src:url("../fonts/CabinetGrotesk-Bold.ttf");
+  font-style: normal;
+  font-display: swap;
+  font-weight:700;
 }
 
 /*Glass styles*/
@@ -107,7 +119,7 @@
     0px 6px 16px 0px var(--dark-1);
 }
 
-.glass-style3{
+.glass-style4{
     background: rgba(255, 255, 255, 0.049); /* [2, 3] */
   backdrop-filter: blur(10px); /* [2, 4] */
   -webkit-backdrop-filter: blur(10px); /* برای پشتیبانی در مرورگر سافاری */ /* [4] */

@@ -45,7 +45,7 @@ function Home() {
         </div>
         <Navbar />
         <Hero/>
-        <SkillRotator/>
+        
 
 
       </div>

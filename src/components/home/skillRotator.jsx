@@ -90,7 +90,7 @@ export default function SkillRotator() {
         // 5) ورود متن جدید
         tl.to(
           display,
-          { y: 0, opacity: 1, duration: 0.38, ease: "power2.out" },
+          { y: 1, opacity: 1, duration: 0.38, ease: "power2.out" },
           ">"
         );
 
@@ -110,12 +110,12 @@ export default function SkillRotator() {
   }, []);
 
   return (
-    <div className="absolute top-[60%] w-[900px] h-[60px] left-[45%] translate-[-50%] bg-transparent flex items-center font-cabin pl-20">
+    <div className="mt-14 bg-transparent flex items-center font-cabin pl-2">
       <p className="text-right text-white text-4xl flex flex-row items-center">
         I build&nbsp;
         <span
           ref={slotRef}
-          className="py-2 px-4 hero-glass rounded-full relative inline-flex overflow-hidden items-center whitespace-nowrap align-baseline"
+          className="py-2 px-4 glass-style3 rounded-full relative inline-flex overflow-hidden items-center whitespace-nowrap align-baseline"
         >
           {/* نمایش واقعی */}
           <span
@@ -135,8 +135,7 @@ export default function SkillRotator() {
           <span
             ref={measureRef}
             className="absolute -z-10 opacity-0 pointer-events-none whitespace-nowrap inline-flex items-center"
-            aria-hidden="true"
-          >
+            aria-hidden="true">
             <span>{next.text}</span>&nbsp;
             <DynamicIcon
               className="shrink-0 inline-block"

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
+import SkillRotator from "./skillRotator";
 
 export default function Hero() {
   useEffect(() => {
@@ -112,44 +113,40 @@ export default function Hero() {
 
   return (
     <>
-      <div
-        id="hero"
-        className="hero-glass absolute top-[40%] left-[50%] translate-[-50%] 
-        group font-cabin text-center py-6 px-20 text-white rounded-full
-        max-md:px-4"
-      >
-        <p
-          id="hero-hi"
-          className={`
-            max-md:text-[16px]
-            text-[30px] 
-            `}
-        >
-          Hi! i’m Ali
-        </p>
-        <div
-          className="overflow-hidden mt-7
-          max-md:mt-4"
-        >
-          <div
-          id="hero-title"
-            className={`
-              felx flex-col
-              max-md:text-[10vw]
-              md:text-[40px]
-              lg:text-[75px]
-              xl:text-[80px]
-              hero-title text-[#F8F8F800]`}
-          >
-            <p className="inline-block">
-              {"Frontend Developer".split("").map((char, i) => (
-                <span key={"X" + i} className={`char code-char`}>
-                  {char === " " ? "\u00A0" : char}
-                </span>
-              ))}
-            </p>
+      <div      
+        className="absolute top-[45%] left-[50%] translate-[-50%]">
+          <div id="hero" className="hero-glass group font-cabin text-center py-6 px-20 text-white rounded-full
+              max-md:px-4">
+              <p
+                id="hero-hi"
+                className={`
+                  max-md:text-[16px]
+                  text-[30px] `}>
+                Hi! i’m Ali
+              </p>
+              <div
+                className="overflow-hidden mt-7
+                max-md:mt-4">
+                <div
+                id="hero-title"
+                  className={`
+                    felx flex-col
+                    max-md:text-[10vw]
+                    md:text-[40px]
+                    lg:text-[75px]
+                    xl:text-[80px]
+                    hero-title text-[#F8F8F800]`}>
+                  <p className="inline-block">
+                    {"Frontend Developer".split("").map((char, i) => (
+                      <span key={"X" + i} className={`char code-char`}>
+                        {char === " " ? "\u00A0" : char}
+                      </span>
+                    ))}
+                  </p>
+                </div>
+              </div>
           </div>
-        </div>
+          <SkillRotator/>
       </div>
     </>
   );

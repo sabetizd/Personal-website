@@ -9,7 +9,6 @@ function App() {
     <>
       <div>
        <Home/>
-       <div className='w-full h-6 bg-amber-400'></div>
       </div>
     </>
   )

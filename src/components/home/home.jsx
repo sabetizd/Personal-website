@@ -9,9 +9,6 @@ import SkillRotator from "./skillRotator";
 function Home() {
 
 
-  useEffect(() => {
-    
-  }, []);
 
   return (
     <>

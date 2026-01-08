@@ -9,27 +9,46 @@ export default function Hero() {
   return (
     <>
      <div id="hero" className=" absolute top-[40%] left-[50%] translate-[-50%] 
-        group font-cabin text-center py-6 px-20 text-white rounded-full">
-          <p className="text-[30px] hero-hi">Hi! i’m Ali</p>
+        group font-cabin text-center py-6 px-20 text-white rounded-full
+        max-md:px-0">
+          <p className={`
+            max-md:text-[16px]
+            text-[30px] hero-hi
+            `}>Hi! i’m Ali</p>
           <div className="hero-title-wrap overflow-hidden mt-7">
-            <p
-            className="hero-title text-[80px] text-[#F8F8F800]"
-            style={{
-                WebkitTextStrokeWidth: "1px",
-                WebkitTextStrokeColor: "#fff",
-            }}
+            <div
+            className={`
+              felx flex-col justify-center items-center
+              max-md:text-[20px]
+              hero-title text-[80px] text-[#F8F8F800]`}
+            
             >
-            {["F","r","o","n","t","e","n","d"," ","D","e","v","e","l","o","p","e","r"].map(
-                (char, i) => (
-                <span
-                    key={i}
-                    className={`char inline-block ${[char,"<",">","_"].includes(char) ? "code-char" : ""}`}
-                >
-                    {char === " " ? "\u00A0" : char}
-                </span>
-                )
-            )}
-            </p>
+             <p >
+                {["F","r","o","n","t","e","n","d"," "].map(
+                  (char, i) => (
+                  <span
+                      key={i}
+                      className={`char inline-block ${[char,"<",">","_"].includes(char) ? "code-char" : ""}`}
+                  >
+                      {char === " " ? "\u00A0" : char}
+                  </span>
+                  )
+                )}
+              </p>      
+              <p> 
+                {["D","e","v","e","l","o","p","e","r"].map(
+                  (char, i) => (
+                  <span
+                      key={"X"+i}
+                      className={`char inline-block ${[char,"<",">","_"].includes(char) ? "code-char" : ""}`}
+                  >
+                      {char === " " ? "\u00A0" : char}
+                  </span>
+                  )
+                )}
+              </p>    
+
+            </div>
           </div>
         </div>
     </>

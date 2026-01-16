@@ -16,12 +16,12 @@ export default function Hero() {
       borderRadius: "12px",
     });
 
-    gsap.set(".hero-hi", {
+    gsap.set("#hero-hi", {
       opacity: 0,
       y: 10,
     });
 
-    gsap.set(".hero-title", {
+    gsap.set("#hero-title", {
       yPercent: 12,
       opacity: 0,
     });

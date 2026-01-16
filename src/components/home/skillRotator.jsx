@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLayoutEffect, useRef, useState, useMemo } from "react";
 import { gsap } from "gsap";
 import { DynamicIcon } from "lucide-react/dynamic";
@@ -9,10 +9,15 @@ export default function SkillRotator() {
       { text: "fast interfaces", icon: "sparkles" },
       { text: "scalable systems", icon: "expand" },
       { text: "purposeful interactions", icon: "slack" },
-      { text: "products users don’t fight", icon: "gem" },
+      { text: "unique interfaces", icon: "gem" },
     ],
     []
   );
+  const iconRef = useRef(null)
+  const [iconSize,setIconSize] = useState()
+  const getIconSize = ()=>{
+   return iconRef.current;
+  }
 
   const [i, setI] = useState(0);
   const current = slogs[i];
@@ -50,7 +55,7 @@ export default function SkillRotator() {
         (parseFloat(cs.paddingRight || "0") || 0);
 
       gsap.set(slot, {
-        width: display.getBoundingClientRect().width + padX + 30,
+        width: display.getBoundingClientRect().width + padX +24,
       });
 
       const run = () => {
@@ -90,7 +95,7 @@ export default function SkillRotator() {
         // 5) ورود متن جدید
         tl.to(
           display,
-          { y: 1, opacity: 1, duration: 0.38, ease: "power2.out" },
+          { y: 0, opacity: 1, duration: 0.38, ease: "power2.out" },
           ">"
         );
 
@@ -99,34 +104,54 @@ export default function SkillRotator() {
 
       // شروع
       timerRef.current = gsap.delayedCall(0.8, run);
+     
     };
 
     start();
+    
+   
 
     return () => {
       if (timerRef.current) timerRef.current.kill();
       if (tlRef.current) tlRef.current.kill();
     };
-  }, []);
+  },[]);
+
+
+  const handleIconSizeRef = (node) => {
+    if (node && node instanceof SVGSVGElement) {
+      const computedStyle = window.getComputedStyle(node);
+      console.log(computedStyle.width)
+       return computedStyle.width
+
+    }
+  };
+
 
   return (
     <div className="mt-14 bg-transparent flex items-center font-cabin pl-2">
-      <p className="text-right text-white text-4xl flex flex-row items-center">
+      <p className="text-right text-white text-4xl flex flex-row items-center
+      max-sm:text-sm">
         I build&nbsp;
         <span
           ref={slotRef}
-          className="py-2 px-4 glass-style3 rounded-full relative inline-flex overflow-hidden items-center whitespace-nowrap align-baseline"
+          className="py-2 px-4 glass-style3 rounded-full relative inline-flex overflow-hidden items-center whitespace-nowrap align-baseline
+          max-md:py-1 max-md:px-2"
         >
           {/* نمایش واقعی */}
           <span
             ref={displayRef}
-            className="inline-flex items-center whitespace-nowrap will-change-transform"
+            className="flex items-center justify-center whitespace-nowrap will-change-transform"
           >
-            <span>{current.text}</span>&nbsp;
+            <span className="max-sm:ml-1">{current.text}</span>&nbsp;
             <DynamicIcon
-              className="shrink-0 inline-block drop-shadow-[0_0_10px_#fff]"
-              strokeWidth={1.75}
-              size={30}
+              ref={handleIconSizeRef}
+              className={`shrink-0 inline-block drop-shadow-[0_0_10px_#fff] 
+                max-sm:size-[18px]
+                md:size-[20px] 
+                lg:size-[25px] 
+                xl:size-[30px] `}
+              strokeWidth={1.75}        
               name={current.icon}
             />
           </span>

@@ -267,9 +267,9 @@ const MobileNavbar = () => {
 
                     {/*Profile Info*/}
                     <div ref={greetingsRef} className="text-white">
-                      <p  className="font-cabin text-center text-[17px]">👋 nice to meet you</p>
+                      <p  className="font-cabin text-center text-[17px]">👋 nice to meet you !</p>
                       <p  className="flex items-center text-center justify-center text-[15px] tracking-wider">
-                        I'm Ali
+                        I'm Ali a
                         'Frontend Developer'&nbsp;
                       </p>
                       <div className="w-full flex items-center justify-center gap-2 mt-2">

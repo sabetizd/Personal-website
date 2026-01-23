@@ -120,8 +120,11 @@ export default function Hero() {
               <p
                 id="hero-hi"
                 className={`
-                  max-md:text-[16px]
-                  text-[30px] `}>
+                  text-[5vw]
+                  md:text-[18px]
+                  lg:text-[25px]
+                  xl:text-[30px]
+                    `}>
                 Hi! i’m Ali
               </p>
               <div
@@ -132,7 +135,7 @@ export default function Hero() {
                   className={`
                     felx flex-col
                     max-md:text-[10vw]
-                    md:text-[40px]
+                    md:text-[50px]
                     lg:text-[75px]
                     xl:text-[80px]
                     hero-title text-[#F8F8F800]`}>

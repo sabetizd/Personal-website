@@ -8,16 +8,11 @@ export default function SkillRotator() {
     () => [
       { text: "fast interfaces", icon: "sparkles" },
       { text: "scalable systems", icon: "expand" },
-      { text: "purposeful interactions", icon: "slack" },
+      { text: "effective interactions", icon: "slack" },
       { text: "unique interfaces", icon: "gem" },
     ],
     []
   );
-  const iconRef = useRef(null)
-  const [iconSize,setIconSize] = useState()
-  const getIconSize = ()=>{
-   return iconRef.current;
-  }
 
   const [i, setI] = useState(0);
   const current = slogs[i];
@@ -55,7 +50,7 @@ export default function SkillRotator() {
         (parseFloat(cs.paddingRight || "0") || 0);
 
       gsap.set(slot, {
-        width: display.getBoundingClientRect().width + padX +24,
+        width: display.getBoundingClientRect().width + padX + handleIconSizeRef(),
       });
 
       const run = () => {
@@ -131,19 +126,19 @@ export default function SkillRotator() {
   return (
     <div className="mt-14 bg-transparent flex items-center font-cabin pl-2">
       <p className="text-right text-white text-4xl flex flex-row items-center
-      max-sm:text-sm">
-        I build&nbsp;
+      max-sm:text-[5vw]">
+        i focus on&nbsp;
         <span
           ref={slotRef}
-          className="py-2 px-4 glass-style3 rounded-full relative inline-flex overflow-hidden items-center whitespace-nowrap align-baseline
-          max-md:py-1 max-md:px-2"
+          className="py-2 px-3 glass-style3 rounded-full relative inline-flex overflow-hidden items-center whitespace-nowrap align-baseline
+          max-md:py-1 max-md:px-1.5"
         >
           {/* نمایش واقعی */}
           <span
             ref={displayRef}
             className="flex items-center justify-center whitespace-nowrap will-change-transform"
           >
-            <span className="max-sm:ml-1">{current.text}</span>&nbsp;
+            <span className="max-sm:ml-1 ">{current.text}</span>&nbsp;
             <DynamicIcon
               ref={handleIconSizeRef}
               className={`shrink-0 inline-block drop-shadow-[0_0_10px_#fff] 

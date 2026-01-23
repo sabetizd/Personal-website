@@ -1,19 +1,20 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import GradientBlinds from "./GradientBlinds ";
 import Beams from "./beam";
 import SidePanel from "../sidePanel/sidePanel";
 import Navbar from "../navbar/navbar";
 import Hero from "./hero";
-import SkillRotator from "./skillRotator";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
-
-
+  
 
   return (
     <>
-      <div className="h-svh w-full relative">
-        <div className="h-svh w-full relative max-md:hidden flex">
+      <div className="">
+        <div className="h-screen w-full max-md:hidden flex z-10 relative">
           <GradientBlinds
             gradientColors={["#eb8615", "#903f05"]}
             angle={30}
@@ -28,10 +29,13 @@ function Home() {
             shineDirection="left"
             mixBlendMode="lighten"
           />
-          <SidePanel />
+        <SidePanel />
+        <Hero />
         </div>
 
-        <div className="h-svh w-full relative max-md:flex hidden"> {/* Mobile */}
+        <div className="h-svh w-full relative max-md:flex hidden">
+          {" "}
+          {/* Mobile */}
           <Beams
             beamWidth={0.75}
             beamHeight={15}
@@ -42,22 +46,14 @@ function Home() {
             scale={0.2}
             rotation={30}
           />
+
+        <Hero />
         </div>
+
         <Navbar />
-        <Hero/>
-        
-
-
       </div>
-
-  
-      
     </>
   );
 }
-
-
-
-
 
 export default Home;

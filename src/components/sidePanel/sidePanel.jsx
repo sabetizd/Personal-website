@@ -21,9 +21,8 @@ function SidePanel() {
     <>
       <div
         className="absolute px-2 py-2 h-[92svh] flex flex-col items-center translate-y-[-50%] top-[50%] left-5 rounded-[26px] outer-glass inner-glass 
-    [&>div]:mt-1
-    max-md:z-10 max-md:left-3"
-      >
+        [&>div]:mt-1
+        max-md:z-10 max-md:left-3">
         <div className="w-full h-9 flex justify-center items-center relative">
           <MagneticIcon>
             <a href="">
@@ -40,7 +39,7 @@ function SidePanel() {
         [&>div]:bg-white"
         >
           <div className="size-[6px] rounded-full"></div>
-          <div className="w-px h-[99%] !bg-gray-400 overflow-hidden relative">
+          <div className="w-px h-[99%] bg-gray-400! overflow-hidden relative">
             <div
               id="progress"
               className="absolute -mt-1.5 w-px h-[1%] bg-white"
@@ -52,7 +51,7 @@ function SidePanel() {
 
         {/*Socials*/}
 
-        <div className="w-full h-[35%]  flex items-center justify-normal flex-col gap-4 pt-3">
+        <div className="w-full flex items-center justify-normal flex-col gap-4 pt-3">
           <a className=" p-1 rounded-md" href="#">
             <MagneticIcon>
               <DynamicIcon name="linkedin" size={19} color="white" />

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import SkillRotator from "./skillRotator";
+import { DynamicIcon } from "lucide-react/dynamic";
 
 export default function Hero() {
   useEffect(() => {
@@ -150,6 +151,15 @@ export default function Hero() {
               </div>
           </div>
           <SkillRotator/>
+      </div>
+
+
+      {/* scroll down */}
+      <div className="absolute top-[90%] left-[50%] translate-x-[-50%]">
+        <div className="flex flex-col items-center text-white font-cabin">
+          <span className="min-md:text-2xl">scroll down</span>
+          <DynamicIcon size={19} name="mouse" />
+        </div>
       </div>
     </>
   );

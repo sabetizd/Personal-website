@@ -131,6 +131,8 @@
 
 }
 
+
+/*overlap sections class*/
 .panel {
-  @apply relative h-[100svh] flex items-center justify-center flex-col gap-4 ;
+  @apply relative h-[100svh] flex items-center justify-center flex-col;
 }

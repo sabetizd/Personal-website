@@ -234,17 +234,17 @@ const MobileNavbar = () => {
         `
         saturate-150
         max-sm:flex hidden       
-        size-11 absolute top-3 right-3 items-center justify-center
-        hero-glass color-white rounded-2xl z-30
+        size-11 fixed top-3 right-3 items-center justify-center
+        hero-glass color-white rounded-2xl z-60
         `}>
           <DynamicIcon ref={iconRef}
           className={`
           drop-shadow-[0px_0px_5px_#ffff]
           `} color="#fff" name={menuIcon}/>
       </div>
-      <div ref={menuRef} className="w-full h-0 rounded-none absolute bottom-0 backdrop-blur-[15px] z-10">
+      <div ref={menuRef} className="w-full h-0 rounded-none fixed bottom-0 backdrop-blur-[15px] z-50">
             <div className="size-full flex">
-              <div className="w-full h-[100svh] pt-[50px] flex justify-evenly flex-col px-4 font-cabin">
+              <div className="w-full h-svh pt-[50px] flex justify-evenly flex-col px-4 font-cabin">
 
                 {/*Menu Items*/}
                   <div className="w-full flex flex-col items-center text-white">

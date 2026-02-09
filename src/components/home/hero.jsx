@@ -155,7 +155,7 @@ export default function Hero() {
 
 
       {/* scroll down */}
-      <div className="absolute top-[90%] left-[50%] translate-x-[-50%]">
+      <div className="absolute top-[90%] max-md:top-[93%] left-[50%] translate-x-[-50%]">
         <div className="flex flex-col items-center text-white font-cabin">
           <span className="min-md:text-2xl">scroll down</span>
           <DynamicIcon size={19} name="mouse" />

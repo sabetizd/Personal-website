@@ -7,6 +7,7 @@ import Hero from "./hero";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import About from "../About/about";
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
@@ -54,6 +55,7 @@ function Home() {
               shineDirection="left"
               mixBlendMode="lighten"
             />
+            <Navbar />
             <SidePanel />
           </div>
 
@@ -74,9 +76,17 @@ function Home() {
           <Hero />
 
         </div>
-        <div id="sec1" className="panel bg-amber-400"></div>
-        <div id="sec2" className="panel bg-blue-400"></div>
-        <div id="sec3" className="panel bg-green-400"></div>
+
+        {/* About */}
+        <div id="about" className="panel">
+          <About/>
+        </div>
+        <div id="sec2" className="panel bg-blue-400">
+          test
+        </div>
+        <div id="sec3" className="panel bg-green-400">
+          test
+        </div>
 
       </div>
       

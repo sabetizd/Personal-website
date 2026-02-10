@@ -3,11 +3,35 @@ import Beams from "./beam";
 import SidePanel from "../sidePanel/sidePanel";
 import Navbar from "../navbar/navbar";
 import Hero from "./hero";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 
 
 function Home() {
   
+  useGSAP(()=>{
+    gsap.set('#sidebar',{
+      opacity:0
+
+    })
+     gsap.set('#navbar',{
+      opacity:0,
+      y:-12
+    })
+
+    const tl = gsap.timeline({defaults:{ease:'power3.in'}})
+
+    tl.to('#sidebar',{
+      delay:3.2,
+      opacity:1,
+      duration:0.8
+    }).to('#navbar',{   
+      opacity:1,
+      y:0,
+      duration:0.8
+    },"-=0.8")
+  })
   
   return (
     <>
@@ -21,7 +45,11 @@ function Home() {
         }
       `}
     </style>
+
+    <div id="navbar">
       <Navbar />
+    </div>
+
       <div className="relative overflow-hidden">
         <div className="panel">
 
@@ -42,7 +70,9 @@ function Home() {
               mixBlendMode="lighten"
             />
             
-            <SidePanel />
+            <div id="sidebar">
+             <SidePanel />
+            </div>
           </div>
 
           {/* Mobile */}

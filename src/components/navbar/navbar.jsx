@@ -303,7 +303,7 @@ const MobileNavbar = () => {
 
                 {/*Profile Image & Socials*/}
                   <div className="w-full ">
-                      <img ref={myImageRef} className=" rounded-2xl inline-block" src="public/imgs/my1.png" alt="ali image" />
+                      <img ref={myImageRef} className=" rounded-2xl inline-block" src="/imgs/my1.png" alt="ali image" />
                   </div>
 
                 {/*Socials*/}

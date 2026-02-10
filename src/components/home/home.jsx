@@ -1,14 +1,10 @@
-import { useEffect, useLayoutEffect, useRef } from "react";
 import GradientBlinds from "./GradientBlinds ";
 import Beams from "./beam";
 import SidePanel from "../sidePanel/sidePanel";
 import Navbar from "../navbar/navbar";
 import Hero from "./hero";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import About from "../About/about";
-gsap.registerPlugin(ScrollTrigger);
+
+
 
 function Home() {
   

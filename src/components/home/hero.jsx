@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { gsap } from "gsap";
 import SkillRotator from "./skillRotator";
 import { DynamicIcon } from "lucide-react/dynamic";

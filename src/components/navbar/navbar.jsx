@@ -1,4 +1,4 @@
-import React, { useEffect, useId, useLayoutEffect, useRef,useState } from "react";
+import { useEffect, useId, useRef,useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";

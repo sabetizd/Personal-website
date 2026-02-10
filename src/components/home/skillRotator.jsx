@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { useLayoutEffect, useRef, useState, useMemo } from "react";
 import { gsap } from "gsap";
 import { DynamicIcon } from "lucide-react/dynamic";

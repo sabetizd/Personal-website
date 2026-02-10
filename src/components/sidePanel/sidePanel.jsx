@@ -1,4 +1,4 @@
-import { React, useRef } from "react";
+import { useRef } from "react";
 import { DynamicIcon } from "lucide-react/dynamic";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";

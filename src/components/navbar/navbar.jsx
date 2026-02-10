@@ -424,9 +424,9 @@ const DesktopNavbar = () => {
   });
 
   return (
-    <div
+    <div id="navbar"
       className="h-10 absolute top-10 right-[5%] rounded-3xl 
-      outer-glass inner-glass z-50"
+      outer-glass inner-glass z-60"
     >
       {/* glass highlight */}
 

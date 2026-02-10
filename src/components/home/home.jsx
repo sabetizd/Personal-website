@@ -46,11 +46,11 @@ function Home() {
       `}
     </style>
 
-    <div id="navbar">
-      <Navbar />
-    </div>
 
       <div className="relative overflow-hidden">
+  
+        <Navbar />
+      
         <div className="panel">
 
           {/* Desktop */}

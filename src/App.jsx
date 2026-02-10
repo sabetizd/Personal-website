@@ -1,18 +1,14 @@
-import { useEffect, useState } from 'react'
 import './App.css'
 import Home from '@components/home/home.jsx'
 
 
-function App() {
 
-  useEffect(()=>{
-    
-  },[])
+function App() {
 
   return (
     <>
       <div>
-      <Home/>
+        <Home/>
       </div>
     </>
   )

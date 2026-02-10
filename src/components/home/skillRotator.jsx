@@ -62,7 +62,7 @@ export default function SkillRotator() {
         const tl = gsap.timeline({
           defaults: { overwrite: "auto" },
           onComplete: () => {
-            timerRef.current = gsap.delayedCall(0.8, run);
+            timerRef.current = gsap.delayedCall(1.2, run);
           },
         });
 
@@ -98,7 +98,7 @@ export default function SkillRotator() {
       };
 
       // شروع
-      timerRef.current = gsap.delayedCall(0.8, run);
+      timerRef.current = gsap.delayedCall(1.2, run);
      
     };
 

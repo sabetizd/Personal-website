@@ -27,6 +27,17 @@ export default function Hero() {
       opacity: 0,
     });
 
+    // skillRotator
+    gsap.set("#skill", {
+      yPercent: 12,
+      opacity: 0,
+    });
+    // working
+     gsap.set("#working", {
+      yPercent: 12,
+      opacity: 0,
+    });
+
     const chars = document.querySelectorAll(".code-char");
     gsap.set(chars, { opacity: 1 });
 
@@ -75,9 +86,21 @@ export default function Hero() {
           from: "random",
         },
       })
+      .to("#skill", 
+        {        
+          opacity: 1,
+          y: 0,
+          duration: 1,
+        }
+      )
       .to("#hero-title", {
         delay: 1,
         textShadow: "0 0 5px #fff",
+      })
+      .to('#working',{
+        duration:0.5,
+        y:0,
+        opacity:1
       });
 
       return tl.eventCallback('onComplete',()=>tl.kill())
@@ -90,7 +113,7 @@ export default function Hero() {
     const tl = gsap
       .timeline({
         repeat: -1,
-        repeatDelay: 7,
+        repeatDelay: 8,
       })
       .to(chars, {
         opacity: 0.2,
@@ -150,15 +173,17 @@ export default function Hero() {
                 </div>
               </div>
           </div>
-          <SkillRotator/>
+          <div id="skill">
+            <SkillRotator/>
+          </div>
       </div>
 
 
-      {/* scroll down */}
-      <div className="absolute top-[90%] max-md:top-[93%] left-[50%] translate-x-[-50%]">
-        <div className="flex flex-col items-center text-white font-cabin">
-          <span className="min-md:text-2xl">scroll down</span>
-          <DynamicIcon size={19} name="mouse" />
+      {/* working on it */}
+      <div id="working" className="absolute top-[93%] left-[50%] translate-x-[-50%]">
+        <div className="flex items-center text-white font-cabin gap-1">
+          <DynamicIcon size={19} name="wrench" />
+          <span className="min-md:text-xl">working on it...</span>
         </div>
       </div>
     </>

@@ -12,18 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
   
-  useGSAP(()=>{
-    gsap.utils.toArray('.panel').forEach((panel,i)=>{
-      ScrollTrigger.create({
-        trigger:panel,
-        start:'top top',
-        pin:true,
-        pinSpacing:false,
-        scrub:1
-      })
-    })
-  })
-
+  
   return (
     <>
     <style>
@@ -32,11 +21,12 @@ function Home() {
           width:100%;
           height:100svh;
           position:relative;
+
         }
       `}
     </style>
       <Navbar />
-      <div className="relative">
+      <div className="relative overflow-hidden">
         <div className="panel">
 
           {/* Desktop */}
@@ -55,12 +45,12 @@ function Home() {
               shineDirection="left"
               mixBlendMode="lighten"
             />
-            <Navbar />
+            
             <SidePanel />
           </div>
 
           {/* Mobile */}
-          <div className="h-svh w-full max-md:flex min-md:!hidden">
+          <div className="h-svh w-full max-md:flex min-md:hidden">
             <Beams
               beamWidth={0.75}
               beamHeight={15}
@@ -77,16 +67,7 @@ function Home() {
 
         </div>
 
-        {/* About */}
-        <div id="about" className="panel">
-          <About/>
-        </div>
-        <div id="sec2" className="panel bg-blue-400">
-          test
-        </div>
-        <div id="sec3" className="panel bg-green-400">
-          test
-        </div>
+       
 
       </div>
       

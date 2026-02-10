@@ -131,8 +131,3 @@
 
 }
 
-
-/*overlap sections class*/
-.panel {
-  @apply relative h-svh;
-}

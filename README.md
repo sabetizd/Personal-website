@@ -9,16 +9,33 @@ Inspired by world-class digital experiences featured on 💎AWWWARDS.
 
 ---
 
+## 🚀 Overview
+
+This project demonstrates :
+
+    🔸Interactive Visual Elements Designe
+    🔸Dynamic and Engaging User Experience
+    🔸Advanced Frontend Techniques for Smooth Transitions, Staggered Animations
+    🔸Responsive Design
+    🔸Structure a scalable frontend project
+
+
+---
+
 ## 🚀 Live Demo
 Check it out here 👉 **[Live Demo](https://sabetizd.netlify.app/)**
 
 ---
 
 ## 🛠 Core Techs
-- **React** – Component-based UI (v19+) 
-- **Tailwind CSS** – Utility first styling  
-- **GSAP** –  Animations & Interactions 
-- **Vite** – Fast development and build  
+
+<p align="center">
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="50" />
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="50" />
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" width="50" /> 
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" width="50" /> 
+   <img src="https://i.postimg.cc/CxQwHmQc/gsap.jpg" width="50" />  
+</p>
 
 ---
 

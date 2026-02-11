@@ -1,6 +1,6 @@
 # 🌐 Motion-Driven Portfolio (v1.0)
 <br/><br>
-An interactive portfolio web page focuesd on responsive and motion-driven UI built with **React** , **TailwindCss** and **GSAP**.<br>
+An interactive portfolio web page focusd on responsive and motion-driven UI built with **React** , **TailwindCss** and **GSAP**.<br>
 Inspired by world-class digital experiences featured on 💎AWWWARDS.
 
 
